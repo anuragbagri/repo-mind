@@ -1,29 +1,102 @@
-# Create T3 App
+# RepoMind 🧠🚀
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+RepoMind is a cutting-edge platform that allows users to connect their GitHub repositories and gain insights into their project's activity. It provides a summary of chats, commits, and integrates an AI-powered LLM (Large Language Model) to answer questions about the repository. Built with the **T3 stack** (Next.js, TypeScript, tRPC, TailwindCSS, and Prisma), styled with **shadcn/ui**, and secured with **Clerk** for authentication, RepoMind is designed for developers who want to streamline their workflow and understand their projects better.
 
-## What's next? How do I make an app with this?
+---
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Features ✨
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+- **GitHub Integration**: Seamlessly connect your GitHub repository to RepoMind.
+- **Commit Summarization**: Get a concise summary of recent commits.
+- **Chat Summarization**: Summarize discussions and pull request comments.
+- **AI-Powered Q&A**: Ask questions about your repository and get instant answers powered by an LLM.
+- **Modern Tech Stack**: Built with the T3 stack for scalability, type safety, and developer productivity.
+- **Beautiful UI**: Powered by **shadcn/ui** for a sleek and responsive user interface.
+- **Secure Authentication**: Managed by **Clerk** for seamless and secure user authentication.
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+---
 
-## Learn More
+## Tech Stack 🛠️
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+- **Frontend**: Next.js, TailwindCSS, shadcn/ui
+- **Backend**: tRPC, Next.js API routes
+- **Database**: Prisma (with PostgreSQL or SQLite)
+- **Authentication**: Clerk
+- **LLM Integration**: OpenAI API (or any other LLM provider)
+- **GitHub API**: For repository data and activity
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+---
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## Getting Started 🚀
 
-## How do I deploy this?
+### Prerequisites
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+- Node.js v18 or higher
+- GitHub account
+- OpenAI API key (or any other LLM provider)
+- PostgreSQL or SQLite database
+- Clerk account (for authentication)
+
+---
+
+## Installation
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/yourusername/repo-mind.git
+   cd repo-mind
+
+   ```
+
+2. **install dependencies**
+
+```bash
+npm install
+```
+
+3. **set up enviornment variables**
+   Copy .env.example to .env
+
+```bash
+cp .env.example .env
+```
+
+fill in the required info
+
+```bash
+DATABASE_URL="your_database_url"
+GITHUB_CLIENT_ID="your_github_client_id"
+GITHUB_CLIENT_SECRET="your_github_client_secret"
+CLERK_PUBLISHABLE_KEY="your_clerk_publishable_key"
+CLERK_SECRET_KEY="your_clerk_secret_key"
+OPENAI_API_KEY="your_openai_api_key"
+```
+
+4. **Run database migrations:**
+
+```bash
+npm run db:migrate
+```
+
+5. **start development server**
+
+```bash
+npm run dev
+```
+
+## folder structure
+
+repo-mind/
+├── prisma/ # Prisma schema and migrations
+├── src/
+│ ├── components/ # React components (built with shadcn/ui)
+│ ├── pages/ # Next.js pages
+│ ├── server/ # tRPC routers and API logic
+│ ├── styles/ # TailwindCSS styles
+│ ├── utils/ # Utility functions
+│ └── types/ # TypeScript types
+├── .env.example # Environment variables template
+├── package.json # Project dependencies
+├── tailwind.config.js # TailwindCSS configuration
+└── README.md # You're here!
